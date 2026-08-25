@@ -1,0 +1,5 @@
+return {
+  {
+    "yannvanhalewyn/jujutsu.nvim",
+  },
+}
