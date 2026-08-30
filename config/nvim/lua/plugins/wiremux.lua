@@ -85,7 +85,7 @@ return {
       function()
         -- require("wiremux").send("{this}", { behavior = "all", compose = true, focus = false, submit = true })
 
-        require("wiremux").send("{selection}", {
+        require("wiremux").send("{this}", {
           behavior = "all",
           compose = true,
           focus = false,
@@ -101,17 +101,33 @@ return {
       desc = "Wiremux send to all, but <filtered> :)",
     },
     {
-      "<leader>te",
+      "<leader>tel",
+      function()
+        require("wiremux").send("{line}", { target = "iex", focus = false, submit = true })
+      end,
+      mode = { "n", "x" },
+      desc = "Wiremux send 'line' to iex",
+    },
+    {
+      "<leader>tes",
+      function()
+        require("wiremux").send("{selection}", { target = "iex", focus = false, submit = true })
+      end,
+      mode = { "n", "x" },
+      desc = "Wiremux send 'selection' to iex",
+    },
+    {
+      "<leader>tea",
       function()
         require("wiremux").send("{selection}", { target = "iex", compose = true, focus = false, submit = true })
       end,
       mode = { "n", "x" },
-      desc = "Wiremux send to iex",
+      desc = "Wiremux send 'arbitrary' to iex",
     },
     {
       "<leader>tr",
       function()
-        require("wiremux").send("{selection}", { target = "rocky", compose = true, focus = false, submit = true })
+        require("wiremux").send("{this}", { target = "rocky", compose = true, focus = false, submit = true })
       end,
       mode = { "n", "x" },
       desc = "Wiremux send to rocky",
