@@ -11,3 +11,6 @@ ln -sfn "$(realpath ./.tmux.conf)" ~/.tmux.conf # On a fresh machine/install, TP
 
 rm ~/.config/nono
 ln -sfn "$(realpath ./.config/nono)" ~/.config/nono
+
+rm ~/.agents
+ln -sfn "$(realpath ./.agents)" ~/.agents
