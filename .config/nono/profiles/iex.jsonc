@@ -1,0 +1,26 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "iex",
+    "version": "1.0.0",
+    "description": "Minimal Elixir/Erlang runtime for iex via mise-managed toolchains; no CWD grant",
+    "author": "sage"
+  },
+  "groups": {
+    "include": [
+      "mise_manager"
+    ]
+  },
+  "filesystem": {
+    "allow": [
+      "$HOME/.hex",
+      "$HOME/.mix",
+      "$XDG_CACHE_HOME/erlang-history",
+      "/tmp/mix_pubsub_user$UID",
+      "/tmp/mix_lock_user$UID"
+    ],
+    "read": [
+      "$HOME/.erlang.cookie"
+    ]
+  }
+}

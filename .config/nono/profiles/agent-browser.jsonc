@@ -1,0 +1,13 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "agent-browser",
+    "version": "1.0.0",
+    "description": "Read-only access to Agents Skills; no CWD grant"
+  },
+  "filesystem": {
+    "allow": [
+      "/run/user/$UID"
+    ]
+  }
+}

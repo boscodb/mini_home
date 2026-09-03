@@ -1,0 +1,18 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "chrome-debug",
+    "version": "1.0.0",
+    "description": "Google Chrome debug profiles and assoicated policies.",
+    "author": "sage"
+  },
+  "groups": {
+    "include": [
+    ]
+  },
+  "filesystem": {
+    "allow": [
+      "$HOME/data/zr/chrome_debug_profiles/",
+    ],
+  }
+}

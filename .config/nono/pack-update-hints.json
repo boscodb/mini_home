@@ -1,0 +1,14 @@
+{
+  "entries": {
+    "nolabs-ai/claude": {
+      "last_check": "2026-08-11T16:51:37.655464962Z",
+      "installed_at_check": "0.1.0",
+      "latest": "0.1.0"
+    },
+    "nolabs-ai/pi": {
+      "last_check": "2026-08-11T16:29:53.776891389Z",
+      "installed_at_check": "0.2.0",
+      "latest": "0.2.0"
+    }
+  }
+}

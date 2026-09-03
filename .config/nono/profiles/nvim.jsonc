@@ -1,0 +1,14 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "nvim",
+    "version": "1.0.0",
+    "description": "Read-only access to Neovim config; no CWD grant"
+  },
+  "filesystem": {
+    "read": [
+      // "$XDG_CONFIG_HOME/nvim",
+      "$HOME/data/zr/mini_home/config/nvim"
+    ]
+  }
+}

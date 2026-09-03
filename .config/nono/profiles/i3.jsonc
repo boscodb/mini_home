@@ -1,0 +1,14 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "i3",
+    "version": "1.0.0",
+    "description": "Read-only access to i3 config; no CWD grant"
+  },
+  "filesystem": {
+    "read": [
+      // "$XDG_CONFIG_HOME/i3",
+      "$HOME/data/zr/mini_home/config/i3"
+    ]
+  }
+}

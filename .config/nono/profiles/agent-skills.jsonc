@@ -1,0 +1,13 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "agent-skills",
+    "version": "1.0.0",
+    "description": "Read-only access to Agents Skills; no CWD grant"
+  },
+  "filesystem": {
+    "read": [
+      "$HOME/.agents"
+    ]
+  }
+}

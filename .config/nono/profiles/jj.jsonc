@@ -1,0 +1,19 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "jj",
+    "version": "1.0.0",
+    "description": "Jujutsu (jj) VCS support",
+    "author": "sage"
+  },
+  "groups": {
+    "include": [
+      "git_config"
+    ]
+  },
+  "filesystem": {
+    "read": [
+      "$HOME/.config/jj"
+    ]
+  },
+}

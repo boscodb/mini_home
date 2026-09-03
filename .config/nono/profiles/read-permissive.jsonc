@@ -1,0 +1,16 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "read-permissive",
+    "version": "1.0.0",
+    "description": "Read-only access to '/' aka everything; no CWD grant"
+  },
+  "filesystem": {
+    // This doesn't work because it (i.e. /) overlaps protected nono state root '/home/sage/.local/state/nono'.
+    // Even the `bypass_protection` doesn't help in this situation.
+    // "read": [
+    //   "$HOME"
+    // ],
+    // "bypass_protection": ["$HOME/.local/state/nono"]
+  }
+}

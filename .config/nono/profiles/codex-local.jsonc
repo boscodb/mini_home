@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "nolabs-ai/codex",
+    "agent-skills",
+    "jj",
+    "nvim",
+    "iex",
+    "tmux",
+    "i3",
+    "chrome-debug",
+    "agent-browser",
+    "read-permissive"
+  ],
+  // "environment": {
+  //   "set_vars": {
+  //     "AGENT_BROWSER_SESSION": "codex"
+  //     "AGENT_BROWSER_PIN_TAB": "1"
+  //   }
+  // },
+  "meta": {
+    "name": "codex-local",
+    "version": "1.0.0",
+    "author": "sage"
+  }
+}
