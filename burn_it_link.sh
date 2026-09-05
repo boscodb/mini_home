@@ -17,3 +17,6 @@ ln -sfn "$(realpath ./.agents)" ~/.agents
 
 rm -rf ~/.config/nix
 ln -sfn "$(realpath ./.config/nix)" ~/.config/nix
+
+rm -rf ~/.config/doom
+ln -sfn "$(realpath ./.config/doom)" ~/.config/doom
