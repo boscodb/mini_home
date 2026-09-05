@@ -14,3 +14,6 @@ ln -sfn "$(realpath ./.config/nono)" ~/.config/nono
 
 rm -rf ~/.agents
 ln -sfn "$(realpath ./.agents)" ~/.agents
+
+rm -rf ~/.config/nix
+ln -sfn "$(realpath ./.config/nix)" ~/.config/nix
