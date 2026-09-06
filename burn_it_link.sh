@@ -20,3 +20,5 @@ ln -sfn "$(realpath ./.config/nix)" ~/.config/nix
 
 rm -rf ~/.config/doom
 ln -sfn "$(realpath ./.config/doom)" ~/.config/doom
+# ~/.config/emacs/bin/doom sync
+# ~/.config/emacs/bin/doom doctor
