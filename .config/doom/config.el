@@ -87,6 +87,10 @@
       :nvm "C-k" #'evil-window-up
       :nvm "C-l" #'evil-window-right)
 
+(use-package! xclip
+  :config
+  (xclip-mode 1))
+
 (after! sly
   (setq sly-lisp-implementations
         '((sbcl ("ros" "-L" "sbcl-bin" "-Q" "run") :coding-system utf-8-unix)
