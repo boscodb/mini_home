@@ -1,0 +1,14 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "mini-home-explorer",
+    "version": "1.0.0",
+    "description": "Read-only access for exploring the specified $HOME folders/files; their respective nono profiles will be created after they are moved to my version-controlled & symlinked Home config (dotfiles) at $HOME/data/zr/mini_home; no CWD grant"
+  },
+  "filesystem": {
+    "read": [
+      "$HOME/.roswell/",
+      "$HOME/data/zr/mini_home/"
+    ],
+  }
+}

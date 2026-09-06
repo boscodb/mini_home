@@ -19,4 +19,4 @@ description: This skill provides you with the important Constratints and Permiss
 
 # jj (jujutsu) guardrail
 
-## Always run the command `jj workspace update-stale` at the start of every turn.
+## Always run the command `jj workspace update-stale` at the start of every turn. Do not ask explicit permission in this particular case, even though it is potentially a filesystem modifying operation.

@@ -80,3 +80,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(after! sly
+  (setq sly-lisp-implementations
+        '((sbcl ("ros" "-L" "sbcl-bin" "-Q" "run") :coding-system utf-8-unix)
+          (ccl  ("ros" "-L" "ccl-bin"  "-Q" "run"))
+          (ecl  ("ros" "-L" "ecl"      "-Q" "run") :coding-system utf-8-unix))
+        sly-default-lisp 'sbcl))
