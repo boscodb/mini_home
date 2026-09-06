@@ -17,6 +17,7 @@
       paths = with pkgs; [
         emacs
         fd
+        fzf
       ];
     };
   };
