@@ -7,7 +7,9 @@
   },
   "filesystem": {
     "read": [
-      "$XDG_CONFIG_HOME/nvim"
+      "$XDG_CONFIG_HOME/nvim",
+      "~/.local/share/nvim"
+      // "~/.local/share/nvim/python_venv_for_nvim"
     ]
   }
 }
