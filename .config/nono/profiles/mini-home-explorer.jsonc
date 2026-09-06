@@ -8,7 +8,7 @@
   "filesystem": {
     "read": [
       "$HOME/.roswell/",
-      "$HOME/data/zr/mini_home/"
+      "$HOME/data/zr/workspaces/mini_home__spaces/mini_home/"
     ],
   }
 }
