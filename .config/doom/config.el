@@ -101,4 +101,7 @@
           (ecl  ("ros" "-L" "ecl"      "-Q" "run") :coding-system utf-8-unix))
           (ecl  ("<path to ecl binary>") :coding-system utf-8-unix))
         sly-default-lisp 'sbcl))
+
+(after! flycheck
+  (setq flycheck-global-modes '(not lisp-mode)))
 ;; END: Common Lisp
