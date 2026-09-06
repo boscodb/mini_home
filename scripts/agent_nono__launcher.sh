@@ -3,7 +3,7 @@ set -euo pipefail
 
 : "${AGENT_NAME:?set AGENT_NAME to rocky, pi, codex, claude, or agy}"
 
-project_name="dipsdime"
+project_name="mini_home"
 case "$AGENT_NAME" in
 rocky) # Rocky is operated only in the jj default workspace.
   parent_workspace="."
@@ -26,7 +26,7 @@ rocky)
   AGENT_NAME__SKIP_PERMISSIONS=()
   AGENT_NAME__TMUX_TARGET=':0.3'
 
-  AGENT_NAME="pi"                     # Because, rocky doesn't yet exist as a binary, and is represented by pi.
+  AGENT_NAME="pi" # Because, rocky doesn't yet exist as a binary, and is represented by pi.
   ;;
 pi)
   AGENT_NAME__CDP_PORT=9223
