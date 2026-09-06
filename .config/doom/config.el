@@ -81,6 +81,12 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(map! :map general-override-mode-map
+      :nvm "C-h" #'evil-window-left
+      :nvm "C-j" #'evil-window-down
+      :nvm "C-k" #'evil-window-up
+      :nvm "C-l" #'evil-window-right)
+
 (after! sly
   (setq sly-lisp-implementations
         '((sbcl ("ros" "-L" "sbcl-bin" "-Q" "run") :coding-system utf-8-unix)
