@@ -11,9 +11,7 @@
       "$HOME/.local/share/tmux/"
     ],
     "read_file": [
-      // "$HOME/.tmux.conf"
-      "$HOME/data/zr/mini_home/.tmux.conf"
-
+      "$HOME/.tmux.conf"
     ]
   }
 }

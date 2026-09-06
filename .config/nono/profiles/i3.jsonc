@@ -7,8 +7,7 @@
   },
   "filesystem": {
     "read": [
-      // "$XDG_CONFIG_HOME/i3",
-      "$HOME/data/zr/mini_home/config/i3"
+      "$XDG_CONFIG_HOME/i3"
     ]
   }
 }
