@@ -91,9 +91,14 @@
   :config
   (xclip-mode 1))
 
+;; BEGIN: Common Lisp
 (after! sly
   (setq sly-lisp-implementations
         '((sbcl ("ros" "-L" "sbcl-bin" "-Q" "run") :coding-system utf-8-unix)
+        '((sbcl ("sbcl") :coding-system utf-8-unix)
           (ccl  ("ros" "-L" "ccl-bin"  "-Q" "run"))
+          (ccl  ("<path to ccl binary>"))
           (ecl  ("ros" "-L" "ecl"      "-Q" "run") :coding-system utf-8-unix))
+          (ecl  ("<path to ecl binary>") :coding-system utf-8-unix))
         sly-default-lisp 'sbcl))
+;; END: Common Lisp
