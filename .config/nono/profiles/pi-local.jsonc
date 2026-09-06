@@ -1,16 +1,7 @@
 {
   "extends": [
     "nolabs-ai/pi",
-    "agent-skills",
-    "jj",
-    "mini-home-explorer",
-    "nvim",
-    "iex",
-    "tmux",
-    "i3",
-    "chrome-debug",
-    "agent-browser",
-    "read-permissive"
+    "common"
   ],
   "meta": {
     "name": "pi-local",

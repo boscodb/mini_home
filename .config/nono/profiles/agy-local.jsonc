@@ -1,16 +1,7 @@
 {
   "extends": [
     "default",
-    "agent-skills",
-    "jj",
-    "mini-home-explorer",
-    "nvim",
-    "iex",
-    "tmux",
-    "i3",
-    "chrome-debug",
-    "agent-browser",
-    "read-permissive"
+    "common"
   ],
   "meta": {
     "name": "agy-local",
@@ -36,13 +27,21 @@
       "node_runtime",
       "rust_runtime",
       "python_runtime",
-      { "name": "user_caches_macos", "when": "macos" },
-      { "name": "user_caches_linux", "when": "linux" },
-      { "name": "linux_sysfs_read", "when": "linux" },
+      {
+        "name": "user_caches_macos",
+        "when": "macos"
+      },
+      {
+        "name": "user_caches_linux",
+        "when": "linux"
+      },
+      {
+        "name": "linux_sysfs_read",
+        "when": "linux"
+      },
       "nix_runtime",
       "git_config",
       "unlink_protection"
-
     ],
     "exclude": []
   },

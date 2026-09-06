@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "agent-skills",
+    "jj",
+    "mini-home-explorer",
+    "nvim",
+    "iex",
+    "tmux",
+    "i3",
+    "chrome-debug",
+    "agent-browser",
+    "read-permissive"
+  ],
+  "meta": {
+    "name": "common",
+    "version": "1.0.0",
+    "description": "Includes the common profiles, to keep things DRY."
+  }
+}

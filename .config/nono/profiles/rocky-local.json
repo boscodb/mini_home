@@ -1,15 +1,7 @@
 {
   "extends": [
     "nolabs-ai/pi",
-    "agent-skills",
-    "jj",
-    "nvim",
-    "iex",
-    "tmux",
-    "i3",
-    "chrome-debug",
-    "agent-browser",
-    "read-permissive"
+    "common"
   ],
   "meta": {
     "name": "rocky-local",
