@@ -14,7 +14,15 @@
     let
       system = "x86_64-linux";
       username = "administrator";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+
+        config.allowUnfreePredicate = pkg:
+          builtins.elem (nixpkgs.lib.getName pkg) [
+            "claude-code"
+            "antigravity-cli"
+          ];
+      };
     in {
       homeConfigurations.administrator =
         home-manager.lib.homeManagerConfiguration {
@@ -47,6 +55,12 @@
                 # Fonts
                 nerd-fonts._0xproto
                 nerd-fonts._3270
+
+                # Coding Agents
+                pi-coding-agent
+                codex
+                claude-code
+                antigravity-cli
               ];
 
               # Initial Home Manager state version.
