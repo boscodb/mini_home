@@ -1,26 +1,96 @@
 {
-  description = "mini_home: tools managed by nix";
+  description = "mini_home: tools managed by Home Manager";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-  outputs = { self, nixpkgs }:
-
-  let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    packages.${system}.default = pkgs.buildEnv {
-      name = "mini-home-tools";
-
-      # Add tools here, one per line. Then:
-      #   nix profile upgrade mini_home
-      paths = with pkgs; [
-        emacs
-        fd
-        fzf
-      ];
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-}
 
- 
+  outputs = { nixpkgs, home-manager, ... }:
+    let
+      system = "x86_64-linux";
+      username = "administrator";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      homeConfigurations.administrator =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [
+            {
+              home.username = username;
+              home.homeDirectory = "/home/${username}";
+
+              home.packages = with pkgs; [
+                # CLI tools
+                fd
+                fzf
+                ripgrep
+                jujutsu
+                git-credential-manager
+
+                # Compilers, Runtimes
+                nodejs_26
+                gcc
+
+                # tools
+                difftastic
+
+                # Editors
+                neovim
+                emacs
+
+                # Fonts
+                nerd-fonts._0xproto
+                nerd-fonts._3270
+              ];
+
+              # Initial Home Manager state version.
+              # Do not change casually.
+              home.stateVersion = "26.05";
+
+              programs.git = {
+                enable = true;
+
+                settings = {
+                  credential = {
+                    helper = "manager";
+                    credentialStore = "cache";
+                  };
+                };
+              };
+
+              programs.jujutsu = {
+
+                enable = true;
+
+                settings = {
+
+                  user = {
+                    name = "bzrq";
+                    email = "bosco.dsouza.82@gmail.com";
+                  };
+
+                  ui = {
+                    editor = "nvim";
+                    diff-editor = [
+                      "nvim"
+                      "-c"
+                      "DiffEditor $left $right $output"
+                    ];
+                    diff-instructions = false; # To suppress the JJ-INSTRUCTIONS file that jujutsu injects into the diff editor
+                  };
+
+                };
+              };
+
+              programs.home-manager.enable = true;
+            }
+          ];
+        };
+    };
+}
