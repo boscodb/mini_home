@@ -10,28 +10,45 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs =
+    { nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux";
-      username = "sage";
-      pkgs = import nixpkgs {
-        inherit system;
+      #   system = "x86_64-linux";
+      #   username = "sage";
+      #   pkgs = import nixpkgs {
+      #     inherit system;
+      #
+      #     config.allowUnfreePredicate = pkg:
+      #       builtins.elem (nixpkgs.lib.getName pkg) [
+      #         "claude-code"
+      #         "antigravity-cli"
+      #       ];
+      #   };
+      mkHome =
+        {
+          system,
+          username,
+          homeDirectory,
+        }:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
 
-        config.allowUnfreePredicate = pkg:
-          builtins.elem (nixpkgs.lib.getName pkg) [
-            "claude-code"
-            "antigravity-cli"
-          ];
-      };
-    in {
-      homeConfigurations.sage =
+            config.allowUnfreePredicate =
+              pkg:
+              builtins.elem (nixpkgs.lib.getName pkg) [
+                "claude-code"
+                "antigravity-cli"
+              ];
+          };
+        in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
           modules = [
             {
               home.username = username;
-              home.homeDirectory = "/home/${username}";
+              home.homeDirectory = homeDirectory;
 
               home.packages = with pkgs; [
                 # CLI tools
@@ -45,8 +62,13 @@
                 nodejs_26
                 gcc
 
-                # tools
+                # Git Tools
                 difftastic
+
+                # Nix Tools
+                nil
+                nixfmt
+                statix
 
                 # Editors
                 neovim
@@ -109,5 +131,28 @@
             }
           ];
         };
+    in
+    {
+
+      homeConfigurations = {
+        "sage@thunderbird" = mkHome {
+          system = "x86_64-linux";
+          username = "sage";
+          homeDirectory = "/home/sage";
+        };
+
+        "administrator@74" = mkHome {
+          system = "x86_64-linux";
+          username = "administrator";
+          homeDirectory = "/home/administrator";
+        };
+
+        # Example of a machine with different 'system'
+        "alice@arm-machine" = mkHome {
+          system = "aarch64-linux";
+          username = "alice";
+          homeDirectory = "/home/alice";
+        };
+      };
     };
 }
