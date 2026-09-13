@@ -42,5 +42,5 @@
   "tuicr.nvim": { "branch": "main", "commit": "8b84a000ecc2126ffd2394c188a23f83912779ea" },
   "venv-selector.nvim": { "branch": "main", "commit": "cc4bb3975de8835291f9bb45889e96c6b2795fc4" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "wiremux.nvim": { "branch": "main", "commit": "94402b0a588bc60a7daa331ec1bd546567126a34" }
+  "wiremux.nvim": { "branch": "main", "commit": "3a6e064f4030eb38604ca5024d02ae430e2c1c6b" }
 }
