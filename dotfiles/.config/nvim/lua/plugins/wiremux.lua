@@ -1,5 +1,6 @@
 return {
   "MSmaili/wiremux.nvim",
+  commit = "3a6e064f4030eb38604ca5024d02ae430e2c1c6b", -- temporary fix until upstream resolved it; wiremux regression introduced by the immediately next commit .
   dependencies = {
     "ibhagwan/fzf-lua", -- optional
     "folke/snacks.nvim", -- optional
