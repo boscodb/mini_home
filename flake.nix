@@ -13,7 +13,7 @@
   outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      username = "administrator";
+      username = "sage";
       pkgs = import nixpkgs {
         inherit system;
 
@@ -24,7 +24,7 @@
           ];
       };
     in {
-      homeConfigurations.administrator =
+      homeConfigurations.sage =
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
