@@ -13,17 +13,6 @@
   outputs =
     { nixpkgs, home-manager, ... }:
     let
-      #   system = "x86_64-linux";
-      #   username = "sage";
-      #   pkgs = import nixpkgs {
-      #     inherit system;
-      #
-      #     config.allowUnfreePredicate = pkg:
-      #       builtins.elem (nixpkgs.lib.getName pkg) [
-      #         "claude-code"
-      #         "antigravity-cli"
-      #       ];
-      #   };
       mkHome =
         {
           system,
@@ -79,7 +68,7 @@
                 nerd-fonts._3270
 
                 # Coding Agents
-                pi-coding-agent
+                # pi-coding-agent
                 codex
                 claude-code
                 antigravity-cli
