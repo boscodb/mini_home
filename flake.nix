@@ -68,7 +68,7 @@
                 nerd-fonts._3270
 
                 # Coding Agents
-                pi-coding-agent
+                # pi-coding-agent
                 codex
                 claude-code
                 antigravity-cli
