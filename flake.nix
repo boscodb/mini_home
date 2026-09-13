@@ -61,6 +61,9 @@
                 codex
                 claude-code
                 antigravity-cli
+
+                # dotfiles
+                stow
               ];
 
               # Initial Home Manager state version.
