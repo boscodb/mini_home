@@ -30,7 +30,8 @@ agy)
   ;;
 esac
 
-AGENT_NAME__USER_DATA_DIR="/home/sage/data/zr/chrome_debug_profiles/${AGENT_NAME}__chrome-debug-profile"
+mkdir -p $HOME/data/zr/chrome_debug_profiles/
+AGENT_NAME__USER_DATA_DIR="$HOME/data/zr/chrome_debug_profiles/${AGENT_NAME}__chrome-debug-profile"
 
 AGENT_NAME__INVOCATION="google-chrome \
   --no-first-run \
