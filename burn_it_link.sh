@@ -43,4 +43,4 @@
 # stow --simulate --verbose --dir "$PWD" --target "$HOME" dotfiles helpers
 
 # GNU stow ACTUAL
-stow --verbose --dir "$PWD" --target "$HOME" dotfiles helpers
+stow --verbose --dir "$PWD" --target "$HOME" dotfiles__allowed_by_nono_defaults helpers dotfiles__restricted_by_nono_defaults

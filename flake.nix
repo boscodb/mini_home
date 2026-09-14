@@ -69,7 +69,7 @@
 
                 # Coding Agents
                 # pi-coding-agent
-                codex
+                # codex
                 claude-code
                 antigravity-cli
 
