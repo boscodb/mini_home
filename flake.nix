@@ -117,6 +117,16 @@
                     diff-instructions = false; # To suppress the JJ-INSTRUCTIONS file that jujutsu injects into the diff editor
                   };
 
+                  git = {
+                    # Give every fetched remote bookmark a local counterpart.
+                    # Without this jj leaves them as `name@remote` only, so a branch
+                    # like `f/main` looks "not pulled" even though the commits are here.
+                    auto-local-bookmark = true;
+                  };
+
+                };
+              };
+
               programs.chromium = {
                 enable = true;
                 package = pkgs.google-chrome;
