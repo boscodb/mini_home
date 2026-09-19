@@ -136,6 +136,12 @@
           homeDirectory = "/home/administrator";
         };
 
+        "lolya" = mkHome {
+          system = "x86_64-linux";
+          username = "lolya";
+          homeDirectory = "/home/lolya";
+        };
+
         # Example of a machine with different 'system'
         "alice@arm-machine" = mkHome {
           system = "aarch64-linux";
