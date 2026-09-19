@@ -28,6 +28,7 @@
               builtins.elem (nixpkgs.lib.getName pkg) [
                 "claude-code"
                 "antigravity-cli"
+                "google-chrome"
               ];
           };
         in
@@ -40,6 +41,9 @@
               home.homeDirectory = homeDirectory;
 
               home.packages = with pkgs; [
+                # OS Tools
+                xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
+
                 # CLI tools
                 fd
                 fzf
@@ -113,6 +117,19 @@
                     diff-instructions = false; # To suppress the JJ-INSTRUCTIONS file that jujutsu injects into the diff editor
                   };
 
+              programs.chromium = {
+                enable = true;
+                package = pkgs.google-chrome;
+              };
+
+              xdg.mimeApps = {
+                enable = true;
+                defaultApplications = {
+                  "text/html" = "google-chrome.desktop";
+                  "x-scheme-handler/http" = "google-chrome.desktop";
+                  "x-scheme-handler/https" = "google-chrome.desktop";
+                  "x-scheme-handler/about" = "google-chrome.desktop";
+                  "x-scheme-handler/unknown" = "google-chrome.desktop";
                 };
               };
 
@@ -136,7 +153,7 @@
           homeDirectory = "/home/administrator";
         };
 
-        "lolya" = mkHome {
+        "lolya@wsl" = mkHome {
           system = "x86_64-linux";
           username = "lolya";
           homeDirectory = "/home/lolya";
