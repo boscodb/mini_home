@@ -1,0 +1,7 @@
+#!/bin/sh
+# Under WSL the real xdg-open hands http(s) to Windows via rundll32.exe.
+# Force those down the generic path so xdg.mimeApps picks the Linux Chrome.
+case "$1" in
+  http://*|https://*) export XDG_CURRENT_DESKTOP=X-Generic ;;
+esac
+exec "$HOME/.nix-profile/bin/xdg-open" "$@"
