@@ -45,6 +45,7 @@
                 xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
 
                 # CLI tools
+                nono
                 fd
                 fzf
                 ripgrep
@@ -54,6 +55,7 @@
                 # Compilers, Runtimes
                 nodejs_26
                 gcc
+                tree-sitter # nvim-treesitter grammar builds; must shadow the Windows npm shim on WSL PATH
 
                 # Git Tools
                 difftastic
@@ -73,9 +75,12 @@
 
                 # Coding Agents
                 # pi-coding-agent
-                # codex
+                codex
                 claude-code
                 antigravity-cli
+
+                # Agentic Tools
+                agent-browser
 
                 # dotfiles
                 stow
