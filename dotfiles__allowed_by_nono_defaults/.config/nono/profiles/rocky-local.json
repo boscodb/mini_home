@@ -32,7 +32,8 @@
       "/var/lib/dpkg"
     ],
     "read": [
-      "$HOME/data/zr/tools/pi"
+      "$HOME/data/zr/workspaces/pi__spaces/pi",
+      "$HOME/data/zr/workspaces/mini_home__spaces/mini_home/dotfiles__restricted_by_nono_defaults/.npmrc"
     ],
     "write": [],
     "allow_file": [],
@@ -45,7 +46,9 @@
     "unix_socket_subtree": [],
     "unix_socket_subtree_bind": [],
     "deny": [],
-    "bypass_protection": [],
+    "bypass_protection": [
+      "$HOME/data/zr/workspaces/mini_home__spaces/mini_home/dotfiles__restricted_by_nono_defaults/.npmrc"
+    ],
     "suppress_save_prompt": []
   },
   "network": {
