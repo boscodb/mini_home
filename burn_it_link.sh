@@ -42,5 +42,11 @@
 # # gnu stow simulATE
 # stow --simulate --verbose --dir "$PWD" --target "$HOME" dotfiles helpers
 
+# Keep ~/.local/bin a REAL directory so stow cannot "fold" it into a single
+# symlink pointing back into this repo. Folding breaks `npm link`: npm writes
+# ~/.local/bin/<cmd> as a relative symlink to ../lib/node_modules/..., which
+# only resolves when bin/ and lib/ are true siblings under the npm prefix.
+mkdir -p "$HOME/.local/bin"
+
 # GNU stow ACTUAL
 stow --verbose --dir "$PWD" --target "$HOME" dotfiles__allowed_by_nono_defaults helpers dotfiles__restricted_by_nono_defaults
