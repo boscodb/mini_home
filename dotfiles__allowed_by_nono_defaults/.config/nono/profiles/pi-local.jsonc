@@ -32,7 +32,7 @@
       "/var/lib/dpkg"
     ],
     "read": [
-      "$HOME/data/zr/tools/pi"
+      "$HOME/data/zr/workspaces/pi__spaces/pi",
     ],
     "write": [],
     "allow_file": [],
