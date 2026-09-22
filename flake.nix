@@ -167,6 +167,12 @@
           homeDirectory = "/home/administrator";
         };
 
+        "klinux20" = mkHome {
+          system = "x86_64-linux";
+          username = "rishabh";
+          homeDirectory = "/home/rishabh";
+        };
+
         "bwsl" = mkHome {
           system = "x86_64-linux";
           username = "lolya";
