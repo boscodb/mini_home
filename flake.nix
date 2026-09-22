@@ -50,7 +50,8 @@
                 fzf
                 ripgrep
                 jujutsu
-                git-credential-manager
+                gh
+                glab
 
                 # Compilers, Runtimes
                 nodejs_26
@@ -94,10 +95,8 @@
                 enable = true;
 
                 settings = {
-                  credential = {
-                    helper = "manager";
-                    credentialStore = "cache";
-                  };
+                  credential."https://github.com".helper = "!gh auth git-credential";
+                  credential."https://gitlab.com".helper = "!glab auth git-credential";
                 };
               };
 
