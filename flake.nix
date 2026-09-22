@@ -155,25 +155,25 @@
     {
 
       homeConfigurations = {
-        "sage@thunderbird" = mkHome {
+        "blinux" = mkHome {
           system = "x86_64-linux";
           username = "sage";
           homeDirectory = "/home/sage";
         };
 
-        "administrator@74" = mkHome {
+        "klinux74" = mkHome {
           system = "x86_64-linux";
           username = "administrator";
           homeDirectory = "/home/administrator";
         };
 
-        "lolya@wsl" = mkHome {
+        "bwsl" = mkHome {
           system = "x86_64-linux";
           username = "lolya";
           homeDirectory = "/home/lolya";
         };
 
-        # Example of a machine with different 'system'
+        # Example of a machine with different 'system' i.e. ARM.
         "alice@arm-machine" = mkHome {
           system = "aarch64-linux";
           username = "alice";
