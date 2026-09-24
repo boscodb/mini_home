@@ -53,6 +53,9 @@
                 gh
                 glab
 
+                # TUI tools
+                lazygit
+
                 # Compilers, Runtimes
                 nodejs_26
                 gcc
@@ -61,8 +64,11 @@
                 # Git Tools
                 difftastic
 
+                # Markdown
+                marksman # language server
+
                 # Nix Tools
-                nil
+                nil # language server
                 nixfmt
                 statix
 
