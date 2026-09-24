@@ -91,6 +91,11 @@
               # Do not change casually.
               home.stateVersion = "26.05";
 
+              programs.direnv = {
+                enable = true;
+                nix-direnv.enable = true;
+              };
+
               programs.git = {
                 enable = true;
 
