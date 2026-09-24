@@ -142,6 +142,22 @@
                 };
               };
 
+              # Neovim's python3 provider (pynvim), nix-managed.
+              #
+              # NOT done via `programs.neovim.withPython3`: that module also generates
+              # ~/.config/nvim/init.lua, and since ~/.config/nvim is a symlink into this
+              # repo, the generated file overwrites our own init.lua (LazyVim then never
+              # bootstraps). Instead we expose a python env at a stable path and point
+              # vim.g.python3_host_prog at it from init.lua.
+              #
+              # Deliberately not in home.packages: that would put `python3` on PATH for
+              # every shell, where it could shadow a project's uv/.venv interpreter.
+              home.file.".local/share/nvim/nvim-python3".source = pkgs.python3.withPackages (
+                ps: with ps; [
+                  pynvim
+                ]
+              );
+
               programs.chromium = {
                 enable = true;
                 package = pkgs.google-chrome;
