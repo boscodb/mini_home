@@ -28,9 +28,6 @@
   "filesystem": {
     "allow": [
       "/tmp/jiti",
-      "/etc/apt",
-      "/etc/apt/sources.list.d",
-      "/var/lib/dpkg"
     ],
     "read": [
       "/tmp/claude-$UID",

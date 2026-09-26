@@ -25,16 +25,12 @@
     "deny": []
   },
   "filesystem": {
-    "allow": [
-      "~/.cache/uv/sdists-v9"
-    ],
+    "allow": [],
     "read": [
       "/tmp/claude-$UID"
     ],
     "write": [],
-    "allow_file": [
-      "/}"
-    ],
+    "allow_file": [],
     "read_file": [],
     "write_file": [],
     "unix_socket": [],
