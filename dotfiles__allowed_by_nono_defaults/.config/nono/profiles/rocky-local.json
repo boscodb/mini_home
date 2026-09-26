@@ -1,6 +1,7 @@
 {
   "extends": [
-    "nolabs-ai/pi",
+    // "nolabs-ai/pi",
+    "nolabs-ai/claude",
     "common"
   ],
   "meta": {
@@ -27,11 +28,9 @@
   "filesystem": {
     "allow": [
       "/tmp/jiti",
-      "/etc/apt",
-      "/etc/apt/sources.list.d",
-      "/var/lib/dpkg"
     ],
     "read": [
+      "/tmp/claude-$UID",
       "$HOME/data/zr/workspaces/pi__spaces/pi",
       "$HOME/data/zr/workspaces/mini_home__spaces/mini_home/dotfiles__restricted_by_nono_defaults/.npmrc"
     ],
