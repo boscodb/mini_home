@@ -36,8 +36,6 @@
             config.allowUnfreePredicate =
               pkg:
               builtins.elem (nixpkgs.lib.getName pkg) [
-                "claude-code"
-                "antigravity-cli"
                 "google-chrome"
               ];
           };
@@ -94,12 +92,12 @@
 
                 # Coding Agents
                 # pi-coding-agent
-                codex
+                agents.codex
                 agents.claude-code
-                antigravity-cli
+                agents.antigravity-cli
 
                 # Agentic Tools
-                agent-browser
+                agents.agent-browser
 
                 # dotfiles
                 stow
