@@ -8,10 +8,20 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Deliberately NOT `inputs.nixpkgs.follows = "nixpkgs"`.
+    # The numtide cache only hits when the nixpkgs rev matches theirs;
+    # following ours would rebuild every agent from source.
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      llm-agents,
+      ...
+    }:
     let
       mkHome =
         {
@@ -31,6 +41,8 @@
                 "google-chrome"
               ];
           };
+
+          agents = llm-agents.packages.${system};
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -83,7 +95,7 @@
                 # Coding Agents
                 # pi-coding-agent
                 codex
-                claude-code
+                agents.claude-code
                 antigravity-cli
 
                 # Agentic Tools
