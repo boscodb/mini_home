@@ -29,10 +29,10 @@ launch_nono codex
 launch_nono claude
 launch_nono agy
 
-launch_chrome rocky
-launch_chrome pi
-launch_chrome codex
-launch_chrome claude
-launch_chrome agy
+# launch_chrome rocky
+# launch_chrome pi
+# launch_chrome codex
+# launch_chrome claude
+# launch_chrome agy
 
 exit "$status"
