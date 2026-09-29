@@ -27,6 +27,8 @@ rocky)
   AGENT_NAME__TMUX_TARGET=':0.3'
 
   AGENT_NAME="pi" # Because, rocky doesn't yet exist as a binary, and is represented by pi.
+  # AGENT_NAME="claude" # Because, rocky doesn't yet exist as a binary, and is represented by claude.
+  # AGENT_NAME__SKIP_PERMISSIONS=(--dangerously-skip-permissions)
   ;;
 pi)
   AGENT_NAME__CDP_PORT=9223
