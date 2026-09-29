@@ -1,7 +1,9 @@
 {
   "extends": [
     // "nolabs-ai/pi",
+    "nolabs-ai/pi",
     "nolabs-ai/claude",
+    // "nolabs-ai/claude",
     "common"
   ],
   "meta": {
@@ -28,6 +30,7 @@
   "filesystem": {
     "allow": [
       "/tmp/jiti",
+      "/tmp/jiti"
     ],
     "read": [
       "/tmp/claude-$UID",

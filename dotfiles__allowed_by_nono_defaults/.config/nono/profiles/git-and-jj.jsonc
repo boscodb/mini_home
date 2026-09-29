@@ -1,7 +1,7 @@
 {
   "extends": "default",
   "meta": {
-    "name": "jj",
+    "name": "git-and-jj",
     "version": "1.0.0",
     "description": "Jujutsu (jj) VCS support",
     "author": "sage"
@@ -13,7 +13,8 @@
   },
   "filesystem": {
     "read": [
-      "$HOME/.config/jj"
+      "$HOME/.config/jj",
+      "$HOME/.config/gh" // For Github CLI
     ]
-  },
+  }
 }

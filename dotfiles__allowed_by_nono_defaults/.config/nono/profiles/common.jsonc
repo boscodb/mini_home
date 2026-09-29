@@ -1,7 +1,7 @@
 {
   "extends": [
     "agent-skills",
-    "jj",
+    "git-and-jj",
     "mini-home-explorer",
     "nvim",
     "iex",
