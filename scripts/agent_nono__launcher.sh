@@ -37,7 +37,7 @@ pi)
   ;;
 codex)
   AGENT_NAME__CDP_PORT=9224
-  AGENT_NAME__SKIP_PERMISSIONS=(--dangerously-bypass-approvals-and-sandbox)
+  AGENT_NAME__SKIP_PERMISSIONS=(--dangerously-bypass-approvals-and-sandbox --no-daemon) # --no-daemon enterd the scene when I started using the Codex from numtide llmagents.nix.
   AGENT_NAME__TMUX_TARGET=':coders.1'
   ;;
 claude)
