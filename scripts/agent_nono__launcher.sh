@@ -27,6 +27,8 @@ rocky)
   AGENT_NAME__TMUX_TARGET=':0.3'
 
   AGENT_NAME="pi" # Because, rocky doesn't yet exist as a binary, and is represented by pi.
+  # AGENT_NAME="claude" # Because, rocky doesn't yet exist as a binary, and is represented by claude.
+  # AGENT_NAME__SKIP_PERMISSIONS=(--dangerously-skip-permissions)
   ;;
 pi)
   AGENT_NAME__CDP_PORT=9223
@@ -35,7 +37,7 @@ pi)
   ;;
 codex)
   AGENT_NAME__CDP_PORT=9224
-  AGENT_NAME__SKIP_PERMISSIONS=(--dangerously-bypass-approvals-and-sandbox)
+  AGENT_NAME__SKIP_PERMISSIONS=(--dangerously-bypass-approvals-and-sandbox --no-daemon) # --no-daemon enterd the scene when I started using the Codex from numtide llmagents.nix.
   AGENT_NAME__TMUX_TARGET=':coders.1'
   ;;
 claude)
