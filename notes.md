@@ -32,3 +32,8 @@ Ctrl-C and retry; the edge warms and it completes in minutes.
 
 Manually add `eval "$(direnv hook bash)"` to .bashrc
 TODO: move bash management to home-manager
+
+
+# jj-diffconflicts (https://github.com/rafikdraoui/jj-diffconflicts)
+TODO: Add needed jj config (to home-manager).
+TODO: Also study, https://github.com/dont-be-evil-company/diffconflicts.nvim
