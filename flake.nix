@@ -139,7 +139,23 @@
                       "-c"
                       "DiffEditor $left $right $output"
                     ];
+                    merge-editor = "diffconflicts";
                     diff-instructions = false; # To suppress the JJ-INSTRUCTIONS file that jujutsu injects into the diff editor
+                  };
+
+                  merge-tools.diffconflicts = {
+                    program = "nvim";
+                    merge-args = [
+                      "-c"
+                      "let g:jj_diffconflicts_marker_length=$marker_length"
+                      "-c"
+                      "JJDiffConflicts!"
+                      "$output"
+                      "$base"
+                      "$left"
+                      "$right"
+                    ];
+                    merge-tool-edits-conflict-markers = true;
                   };
 
                   git = {
