@@ -53,6 +53,7 @@
               home.packages = with pkgs; [
                 # OS Tools
                 xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
+                htop
 
                 # CLI tools
                 nono
@@ -95,6 +96,7 @@
                 agents.codex
                 agents.claude-code
                 agents.antigravity-cli
+                agents.autolith
 
                 # Agentic Tools
                 agents.agent-browser
