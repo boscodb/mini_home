@@ -63,6 +63,8 @@
                 jujutsu
                 gh
                 glab
+                gws # https://github.com/googleworkspace/cli
+                google-cloud-sdk # aka gcloud; https://nixos.wiki/wiki/Google_Cloud_SDK
 
                 # TUI tools
                 lazygit
