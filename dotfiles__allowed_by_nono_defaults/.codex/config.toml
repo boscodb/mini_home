@@ -1,0 +1,31 @@
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+service_tier = "default"
+[projects."/home/lolya/data/zr/workspaces/mini_home__spaces/mini_home__codex"]
+trust_level = "trusted"
+
+[projects."/home/lolya/data/zr/workspaces/cfd_agent__spaces/DA_BT_331_CFD_AGENT__codex"]
+trust_level = "trusted"
+
+[projects."/home/lolya/data/zr/workspaces/cfd_human__spaces/cfd_human__codex"]
+trust_level = "trusted"
+
+[projects."/home/lolya/data/zr/workspaces/rocky__spaces/rocky__codex"]
+trust_level = "trusted"
+
+[projects."/home/lolya/data/zr/workspaces/mini_home__spaces/mini_home"]
+trust_level = "trusted"
+
+[projects."/home/lolya/data/zr/workspaces/eb__spaces/eb__codex"]
+trust_level = "trusted"
+
+[tui]
+screen_reader_detection_done = true
+alternate_screen = "never"
+
+[tui.keymap.composer]
+submit = "enter"
+queue = "alt-enter"
+
+[tui.model_availability_nux]
+gpt-6-astra = 4
