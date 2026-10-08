@@ -2,8 +2,9 @@
 
 ## first usage
 
-nix --extra-experimental-features 'nix-command flakes' run github:nix-community/home-manager -- switch --flake .#klinux20
+NIX_CONFIG="experimental-features = nix-command flakes" nix run github:nix-community/home-manager -- switch --flake .#dblinux
+
 
 ## subsequent usage
 
-home-manager switch --flake .#klinux20
+home-manager switch --flake .#dblinux

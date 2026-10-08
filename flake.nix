@@ -52,8 +52,10 @@
 
               home.packages = with pkgs; [
                 # OS Tools
+                xclip
                 xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
                 htop
+                tmux
 
                 # CLI tools
                 nono
@@ -162,11 +164,9 @@
                     merge-tool-edits-conflict-markers = true;
                   };
 
-                  git = {
-                    # Give every fetched remote bookmark a local counterpart.
-                    # Without this jj leaves them as `name@remote` only, so a branch
-                    # like `f/main` looks "not pulled" even though the commits are here.
-                    auto-local-bookmark = true;
+                  remotes.origin = {
+                    # Give every newly fetched remote bookmark a local counterpart.
+                    auto-track-bookmarks = "*";
                   };
 
                 };
@@ -234,6 +234,12 @@
           system = "x86_64-linux";
           username = "lolya";
           homeDirectory = "/home/lolya";
+        };
+
+        "dblinux" = mkHome {
+          system = "x86_64-linux";
+          username = "db-gmktec";
+          homeDirectory = "/home/db-gmktec";
         };
 
         # Example of a machine with different 'system' i.e. ARM.
