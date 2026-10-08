@@ -19,6 +19,9 @@ trust_level = "trusted"
 [projects."/home/lolya/data/zr/workspaces/eb__spaces/eb__codex"]
 trust_level = "trusted"
 
+[projects."/home/db-gmktec/data/zr/workspaces/mini_home__spaces/mini_home__codex"]
+trust_level = "trusted"
+
 [tui]
 screen_reader_detection_done = true
 alternate_screen = "never"
