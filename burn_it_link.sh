@@ -51,5 +51,8 @@ mkdir -p "$HOME/.local/bin"
 # Same for ~/.pi/agent
 mkdir -p "$HOME/.pi/agent"
 
+# same for ~/.codex
+mkdir -p "$HOME/.codex"
+
 # GNU stow ACTUAL
 stow --verbose --dir "$PWD" --target "$HOME" dotfiles__allowed_by_nono_defaults helpers dotfiles__restricted_by_nono_defaults

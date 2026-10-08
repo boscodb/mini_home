@@ -8,8 +8,7 @@
     "tmux",
     "i3",
     "chrome-debug",
-    "agent-browser",
-    "read-permissive"
+    "agent-browser"
   ],
   "meta": {
     "name": "common",

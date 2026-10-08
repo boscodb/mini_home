@@ -103,7 +103,7 @@
                 # Agentic Tools
                 agents.agent-browser
 
-                # dotfiles
+                # dotfiles manager
                 stow
               ];
 

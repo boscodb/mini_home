@@ -8,7 +8,11 @@
   "filesystem": {
     "read": [
       "$HOME/.roswell/",
-      "$HOME/data/zr/workspaces/mini_home__spaces/mini_home/dotfiles__allowed_by_nono_defaults/"
+      "$HOME/data/zr/workspaces/mini_home__spaces/mini_home/dotfiles__allowed_by_nono_defaults/",
+      "$HOME/data/zr/workspaces/mini_home__spaces/mini_home/"
+    ],
+    "bypass_protection": [
+      "$HOME/data/zr/workspaces/mini_home__spaces/mini_home/dotfiles__restricted_by_nono_defaults/.npmrc"
     ],
   }
 }
