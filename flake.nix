@@ -52,8 +52,10 @@
 
               home.packages = with pkgs; [
                 # OS Tools
+                xclip
                 xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
                 htop
+                tmux
 
                 # CLI tools
                 nono
@@ -234,6 +236,12 @@
           system = "x86_64-linux";
           username = "lolya";
           homeDirectory = "/home/lolya";
+        };
+
+        "dblinux" = mkHome {
+          system = "x86_64-linux";
+          username = "db-gmktec";
+          homeDirectory = "/home/db-gmktec";
         };
 
         # Example of a machine with different 'system' i.e. ARM.
