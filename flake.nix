@@ -164,11 +164,9 @@
                     merge-tool-edits-conflict-markers = true;
                   };
 
-                  git = {
-                    # Give every fetched remote bookmark a local counterpart.
-                    # Without this jj leaves them as `name@remote` only, so a branch
-                    # like `f/main` looks "not pulled" even though the commits are here.
-                    auto-local-bookmark = true;
+                  remotes.origin = {
+                    # Give every newly fetched remote bookmark a local counterpart.
+                    auto-track-bookmarks = "*";
                   };
 
                 };
