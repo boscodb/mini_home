@@ -93,6 +93,9 @@
                 nerd-fonts._0xproto
                 nerd-fonts._3270
 
+                # Neural
+                ollama
+
                 # Coding Agents
                 # pi-coding-agent
                 agents.codex
