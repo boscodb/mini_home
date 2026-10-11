@@ -14,5 +14,10 @@
     "name": "common",
     "version": "1.0.0",
     "description": "Includes the common profiles, to keep things DRY."
+  },
+  "filesystem": {
+    "read": [
+      "$HOME/data/zr/workspaces/pi__spaces/pi"
+    ]
   }
 }
