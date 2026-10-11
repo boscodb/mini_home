@@ -31,9 +31,7 @@
       "/etc/apt/sources.list.d",
       "/var/lib/dpkg"
     ],
-    "read": [
-      "$HOME/data/zr/workspaces/pi__spaces/pi",
-    ],
+    "read": [],
     "write": [],
     "allow_file": [],
     "read_file": [],
