@@ -19,6 +19,9 @@
     "read": [
       "$HOME/data/zr/workspaces/pi__spaces/pi",
       "$HOME/.config/gws"
+    ],
+    "write_file": [
+      "$HOME/.config/gws/token_cache.json"
     ]
   }
 }
