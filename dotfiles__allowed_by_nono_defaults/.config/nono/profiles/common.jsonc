@@ -17,7 +17,8 @@
   },
   "filesystem": {
     "read": [
-      "$HOME/data/zr/workspaces/pi__spaces/pi"
+      "$HOME/data/zr/workspaces/pi__spaces/pi",
+      "$HOME/.config/gws"
     ]
   }
 }
