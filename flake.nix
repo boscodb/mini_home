@@ -96,7 +96,7 @@
                 nerd-fonts._3270
 
                 # Neural
-                ollama
+                ollama-rocm
 
                 # Coding Agents
                 # pi-coding-agent

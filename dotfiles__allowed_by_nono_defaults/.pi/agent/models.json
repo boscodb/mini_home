@@ -13,6 +13,66 @@
         },
         {
           "id": "gemma2:2b"
+        },
+        {
+          "id": "gemma4:26b-a4b"
+        }
+      ]
+    },
+    "gmktec": {
+      "baseUrl": "http://localhost:11434/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "models": [
+        {
+          "id": "qwen3.8:27b",
+          "name": "Qwen 3.8 27B (Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 262144,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "gemma4:26b-a4b",
+          "name": "Gemma 4 26B A4B (Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 262144,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "gpt-oss:120b",
+          "name": "GPT-OSS 120B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
         }
       ]
     }
