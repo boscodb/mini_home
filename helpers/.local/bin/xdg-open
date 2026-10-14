@@ -1,7 +1,17 @@
 #!/bin/sh
 # Under WSL the real xdg-open hands http(s) to Windows via rundll32.exe.
 # Force those down the generic path so xdg.mimeApps picks the Linux Chrome.
+#
+# WSL only: on a native desktop, DE=generic skips open_gnome3's `gio open`
+# (which returns at once) for open_generic, which runs the browser in the
+# foreground. That hangs callers like `gh auth login` / `glab auth login`,
+# which launch the browser with cmd.Run() and so never poll for their OAuth
+# device token -- the browser reports success while the CLI waits forever.
 case "$1" in
-  http://*|https://*) export XDG_CURRENT_DESKTOP=X-Generic ;;
+  http://*|https://*)
+    if [ -n "${WSL_DISTRO_NAME:-}" ] || grep -qi microsoft /proc/version 2>/dev/null; then
+      export XDG_CURRENT_DESKTOP=X-Generic
+    fi
+    ;;
 esac
 exec "$HOME/.nix-profile/bin/xdg-open" "$@"
