@@ -227,6 +227,12 @@
           homeDirectory = "/home/administrator";
         };
 
+        "klinux63" = mkHome {
+          system = "x86_64-linux";
+          username = "administrator";
+          homeDirectory = "/home/administrator";
+        };
+
         "klinux20" = mkHome {
           system = "x86_64-linux";
           username = "rishabh";
