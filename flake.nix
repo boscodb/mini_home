@@ -104,6 +104,7 @@
                 agents.claude-code
                 agents.antigravity-cli
                 agents.autolith
+                agents.pi
 
                 # Agentic Tools
                 agents.agent-browser
