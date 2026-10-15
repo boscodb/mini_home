@@ -4,11 +4,21 @@
 export NIX_CONFIG="..."
 nix run github:nix-community/home-manager -- switch --flake .#<homeConfiguration>
 
+## Never build packages, only download them
+Add to /etc/nix/nix.conf:
+
+    max-jobs = 0
+
+Next, do this,
+
+    sudo systemctl restart nix-daemon
+
+
 ## Nix binary caches (numtide llm-agents; https://github.com/numtide/llm-agents.nix)
 
 Needed by the llm-agents.nix input. home-manager cannot manage /etc -- its `nix.settings` writes ~/.config/nix/nix.conf, 
-which the daemon ignores for substituters -- so this is per-machine and imperative.
 
+which the daemon ignores for substituters -- so this is per-machine and imperative.
 Add to /etc/nix/nix.conf, one setting per line:
 
     extra-substituters = https://cache.numtide.com
@@ -27,6 +37,11 @@ The leftover "ignoring untrusted flake configuration setting" warnings are cosme
 A first fetch of a large NAR can crawl at a few KiB/s while the same host serves other paths at MB/s 
 -- a cold object at numtide's CDN origin, not a local problem.
 Ctrl-C and retry; the edge warms and it completes in minutes. 
+
+## Numtide LLM-Agent update
+nix flake update llm-agents
+home-manager switch --flake .#<homeConfiguration>
+
 
 # Direnv
 
