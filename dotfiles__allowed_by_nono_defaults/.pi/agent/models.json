@@ -75,6 +75,17 @@
           }
         }
       ]
+    },
+    "kai": {
+      "baseUrl": "https://enterprisebraintest.kirloskar.com/qwen3.8/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "models": [
+        {
+          "id": "Qwen/Qwen3.8-27B",
+          "contextWindow": 100000
+        }
+      ]
     }
   }
 }
