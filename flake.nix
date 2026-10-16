@@ -189,6 +189,7 @@
               home.file.".local/share/nvim/nvim-python3".source = pkgs.python3.withPackages (
                 ps: with ps; [
                   pynvim
+                  jupyter
                 ]
               );
 
