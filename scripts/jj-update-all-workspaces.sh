@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -u
+
+script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+project_root=$(cd -- "$script_dir/.." && pwd)
+
+# Read the workspace roots without snapshotting or updating this workspace.
+if ! workspace_roots=$(
+  jj --ignore-working-copy -R "$project_root" workspace list \
+    -T 'root ++ "\n"'
+); then
+  printf 'Could not list workspaces\n' >&2
+  exit 1
+fi
+
+result=0
+
+# Update each workspace, continuing even if one workspace fails.
+while IFS= read -r root; do
+  if [[ -z "$root" ]]; then
+    continue
+  fi
+
+  if [[ ! -d "$root" ]]; then
+    printf 'Skipping unavailable workspace: %s\n' "$root" >&2
+    result=1
+    continue
+  fi
+
+  printf 'Updating %s\n' "$root"
+
+  if ! jj -R "$root" workspace update-stale; then
+    printf 'Failed to update: %s\n' "$root" >&2
+    result=1
+  fi
+done <<<"$workspace_roots"
+
+exit "$result"
+
+# Some quick checks
+# jj --config snapshot.auto-update-stale=false status
