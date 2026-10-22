@@ -42,6 +42,23 @@
           }
         },
         {
+          "id": "gemma4:31b",
+          "name": "Gemma3 31B A4B",
+          "input": [
+            "text",
+            "image"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 262144,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
           "id": "gemma4:26b-a4b",
           "name": "Gemma 4 26B A4B (Ollama)",
           "input": [
@@ -59,8 +76,106 @@
           }
         },
         {
+          "id": "gemma4:e4b",
+          "name": "Gemma 4 E4B (Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "mistral-small:24b",
+          "name": "Mistral Small 3.2 24B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "gemma3:27b",
+          "name": "Gemma 3 27B (Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "qwen2.5-coder:14b",
+          "name": "Qwen 2.5 Coder 14B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "qwen3-coder:30b",
+          "name": "Qwen 3 Coder 30B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 262144,
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
           "id": "gpt-oss:120b",
           "name": "GPT-OSS 120B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "gpt-oss:20b",
+          "name": "GPT-OSS 20B (Ollama)",
           "input": [
             "text"
           ],
