@@ -78,4 +78,5 @@ The shim now rewrites the DE only under WSL, so native GNOME keeps the fast-retu
 # jj
 
 ## update-stale for all workspaces
-./scripts/jj-update-all-workspaces.sh
+Add `jju` script to ~/.local/bin via gnu stow.
+
