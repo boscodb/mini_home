@@ -10,7 +10,3 @@ description: This skill provides you with the important Constraints and Permissi
 # Storage guardrail
 
 ## Always seek explicit permission from the User before executing any *write* command that modifies the filesystem. *Read* commands may be executed freely
-
-# jj (jujutsu) guardrail
-
-## Always run the command `jj workspace update-stale` at the start of every turn. Do not ask explicit permission in this particular case, even though it is potentially a filesystem modifying operation
