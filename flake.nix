@@ -142,6 +142,8 @@
                     email = "bosco.dsouza.82@gmail.com";
                   };
 
+                  snapshot.auto-update-stale = true;
+
                   ui = {
                     editor = "nvim";
                     diff-editor = [
