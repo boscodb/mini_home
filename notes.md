@@ -73,3 +73,9 @@ With no Chrome already running, xdg-open *is* Chrome, so the CLI waits until you
 
 ## Fix (applied): 
 The shim now rewrites the DE only under WSL, so native GNOME keeps the fast-returning `gio open` path.
+
+
+# jj
+
+## update-stale for all workspaces
+./scripts/jj-update-all-workspaces.sh
