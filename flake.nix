@@ -266,6 +266,12 @@
           };
         };
 
+        "dblinux2" = mkHome {
+          system = "x86_64-linux";
+          username = "db-gmktec-neo";
+          homeDirectory = "/home/db-gmktec-neo";
+        };
+
         # Example of a machine with different 'system' i.e. ARM.
         "alice@arm-machine" = mkHome {
           system = "aarch64-linux";
