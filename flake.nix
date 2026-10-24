@@ -28,6 +28,10 @@
           system,
           username,
           homeDirectory,
+          jujutsuUser ? {
+            name = "bzrq";
+            email = "bosco.dsouza.82@gmail.com";
+          },
         }:
         let
           pkgs = import nixpkgs {
@@ -137,10 +141,7 @@
 
                 settings = {
 
-                  user = {
-                    name = "bzrq";
-                    email = "bosco.dsouza.82@gmail.com";
-                  };
+                  user = jujutsuUser;
 
                   snapshot.auto-update-stale = true;
 
@@ -259,6 +260,10 @@
           system = "aarch64-darwin";
           username = "anandpanchal";
           homeDirectory = "/Users/anandpanchal";
+          jujutsuUser = {
+            name = "anandcpanchal";
+            email = "anand13394@gmail.com";
+          };
         };
 
         # Example of a machine with different 'system' i.e. ARM.
