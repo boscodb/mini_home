@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 set -u
 
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-project_root=$(cd -- "$script_dir/.." && pwd)
-
 # Read the workspace roots without snapshotting or updating this workspace.
 if ! workspace_roots=$(
-  jj --ignore-working-copy -R "$project_root" workspace list \
+  jj --ignore-working-copy workspace list \
     -T 'root ++ "\n"'
 ); then
-  printf 'Could not list workspaces\n' >&2
+  printf 'Could not list workspaces for the current repository\n' >&2
   exit 1
 fi
 
