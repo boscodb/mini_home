@@ -255,6 +255,12 @@
           homeDirectory = "/home/db-gmktec";
         };
 
+        "acpm1" = mkHome {
+          system = "aarch64-darwin";
+          username = "anandpanchal";
+          homeDirectory = "/Users/anandpanchal";
+        };
+
         # Example of a machine with different 'system' i.e. ARM.
         "alice@arm-machine" = mkHome {
           system = "aarch64-linux";
