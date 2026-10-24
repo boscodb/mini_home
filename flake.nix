@@ -201,7 +201,7 @@
               };
 
               xdg.mimeApps = {
-                enable = true;
+                enable = pkgs.stdenv.hostPlatform.isLinux;
                 defaultApplications = {
                   "text/html" = "google-chrome.desktop";
                   "x-scheme-handler/http" = "google-chrome.desktop";
