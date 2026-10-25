@@ -20,7 +20,7 @@
       ]
     },
     "gmktec": {
-      "baseUrl": "http://localhost:11434/v1",
+      "baseUrl": "http://100.86.90.70:11434/v1",
       "api": "openai-completions",
       "apiKey": "ollama",
       "models": [
