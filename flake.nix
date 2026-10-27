@@ -83,6 +83,8 @@
                 # Git Tools
                 difftastic
 
+                # k8s tools
+                kubernetes-helm
                 # Markdown
                 marksman # language server
 
@@ -264,6 +266,22 @@
             name = "anandcpanchal";
             email = "anand13394@gmail.com";
           };
+        };
+
+        "acpw" = mkHome {
+          system = "x86_64-linux";
+          username = "anand";
+          homeDirectory = "/home/anand";
+          jujutsuUser = {
+            name = "anandcpanchal";
+            email = "anand13394@gmail.com";
+          };
+        };
+
+        "dblinux2" = mkHome {
+          system = "x86_64-linux";
+          username = "db-gmktec-neo";
+          homeDirectory = "/home/db-gmktec-neo";
         };
 
         # Example of a machine with different 'system' i.e. ARM.
