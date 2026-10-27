@@ -6,10 +6,11 @@
     "openai-codex/gpt-6-sol",
     "openai-codex/gpt-6-luna",
     "openai-codex/gpt-6.1-sol",
-    "antigravity/gemini-3.1-pro",
-    "antigravity/gemini-2.5-pro",
-    "antigravity/gemini-3.8-flash",
-    "antigravity/gpt-oss-120b"
+    "google/antigravity-gemini-3.8-flash",
+    "google/antigravity-gemini-3.5-flash",
+    "google/antigravity-gemini-4-argon",
+    "google/antigravity-claude-sonnet-5-5",
+    "google/antigravity-gpt-oss-120b-medium"
   ],
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-sol",
@@ -17,7 +18,7 @@
   "hideThinkingBlock": false,
   "defaultThinkingLevel": "high",
   "packages": [
-    "git:github.com/Rahularya01/pi-antigravity"
+    "npm:@cortexkit/pi-antigravity-auth"
   ],
-  "lastChangelogVersion": "1.1.0"
+  "lastChangelogVersion": "1.4.0"
 }
