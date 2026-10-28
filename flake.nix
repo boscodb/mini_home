@@ -99,6 +99,9 @@
                 nerd-fonts._0xproto
                 nerd-fonts._3270
 
+                # Package managers
+                pnpm
+
                 # Neural
                 # ollama-rocm
 
