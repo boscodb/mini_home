@@ -32,6 +32,7 @@
             name = "bzrq";
             email = "bosco.dsouza.82@gmail.com";
           },
+          extraPackages ? (_pkgs: [ ]),
         }:
         let
           pkgs = import nixpkgs {
@@ -54,71 +55,74 @@
               home.username = username;
               home.homeDirectory = homeDirectory;
 
-              home.packages = with pkgs; [
-                # OS Tools
-                xclip
-                xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
-                htop
-                tmux
+              home.packages =
+                with pkgs;
+                [
+                  # OS Tools
+                  xclip
+                  xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
+                  htop
+                  tmux
 
-                # CLI tools
-                nono
-                fd
-                fzf
-                ripgrep
-                jujutsu
-                gh
-                glab
-                gws # https://github.com/googleworkspace/cli
-                google-cloud-sdk # aka gcloud; https://nixos.wiki/wiki/Google_Cloud_SDK
+                  # CLI tools
+                  nono
+                  fd
+                  fzf
+                  ripgrep
+                  jujutsu
+                  gh
+                  glab
+                  gws # https://github.com/googleworkspace/cli
+                  google-cloud-sdk # aka gcloud; https://nixos.wiki/wiki/Google_Cloud_SDK
 
-                # TUI tools
-                lazygit
+                  # TUI tools
+                  lazygit
 
-                # Compilers, Runtimes
-                nodejs_26
-                gcc
-                tree-sitter # nvim-treesitter grammar builds; must shadow the Windows npm shim on WSL PATH
+                  # Compilers, Runtimes
+                  nodejs_26
+                  gcc
+                  tree-sitter # nvim-treesitter grammar builds; must shadow the Windows npm shim on WSL PATH
 
-                # Git Tools
-                difftastic
+                  # Git Tools
+                  difftastic
 
-                # Markdown
-                marksman # language server
+                  # Markdown
+                  marksman # language server
 
-                # Nix Tools
-                nil # language server
-                nixfmt
-                statix
+                  # Nix Tools
+                  nil # language server
+                  nixfmt
+                  statix
 
-                # Editors
-                neovim
-                emacs
+                  # Editors
+                  neovim
+                  emacs
 
-                # Fonts
-                nerd-fonts._0xproto
-                nerd-fonts._3270
+                  # Fonts
+                  nerd-fonts._0xproto
+                  nerd-fonts._3270
 
-                # Package managers
+               # Package managers
                 pnpm
 
                 # Neural
                 # ollama-rocm
 
-                # Coding Agents
-                # pi-coding-agent
-                agents.codex
-                agents.claude-code
-                agents.antigravity-cli
-                agents.autolith
-                agents.pi
+                  # Coding Agents
+                  # pi-coding-agent
+                  agents.codex
+                  agents.claude-code
+                  agents.antigravity-cli
+                  agents.autolith
+                  agents.pi
 
-                # Agentic Tools
-                agents.agent-browser
+                  # Agentic Tools
+                  agents.agent-browser
 
-                # dotfiles manager
-                stow
-              ];
+                  # dotfiles manager
+                  stow
+                ]
+                ++ (extraPackages pkgs);
 
               # Initial Home Manager state version.
               # Do not change casually.
@@ -175,7 +179,7 @@
                   };
 
                   remotes.origin = {
-                    # Give every newly fetched remote bookmark a local counterpart.
+
                     auto-track-bookmarks = "*";
                   };
 
@@ -267,6 +271,21 @@
             name = "anandcpanchal";
             email = "anand13394@gmail.com";
           };
+        };
+
+        "acpw" = mkHome {
+          system = "x86_64-linux";
+          username = "anand";
+          homeDirectory = "/home/anand";
+          jujutsuUser = {
+            name = "anandcpanchal";
+            email = "anand13394@gmail.com";
+          };
+          extraPackages =
+            pkgs: with pkgs; [
+              # k8s tools
+              kubernetes-helm
+            ];
         };
 
         "dblinux2" = mkHome {
