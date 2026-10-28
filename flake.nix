@@ -102,8 +102,11 @@
                   nerd-fonts._0xproto
                   nerd-fonts._3270
 
-                  # Neural
-                  # ollama-rocm
+               # Package managers
+                pnpm
+
+                # Neural
+                # ollama-rocm
 
                   # Coding Agents
                   # pi-coding-agent
