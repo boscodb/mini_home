@@ -1,4 +1,4 @@
-model = "gpt-5.6-sol"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "high"
 service_tier = "default"
 [projects."/home/lolya/data/zr/workspaces/mini_home__spaces/mini_home__codex"]
@@ -32,4 +32,7 @@ alternate_screen = "never"
 [tui.keymap.composer]
 submit = "enter"
 queue = "alt-enter"
+
+[tui.model_availability_nux]
+"gpt-6.1-sol" = 1
 
