@@ -32,7 +32,10 @@
             name = "bzrq";
             email = "bosco.dsouza.82@gmail.com";
           },
+          gitUser ? jujutsuUser,
+          enableAgents ? true,
           extraPackages ? (_pkgs: [ ]),
+          extraModules ? [ ],
         }:
         let
           pkgs = import nixpkgs {
@@ -110,6 +113,10 @@
                   # Neural
                   # ollama-rocm
 
+                  # dotfiles manager
+                  stow
+                ]
+                ++ (pkgs.lib.optionals enableAgents [
                   # Coding Agents
                   # pi-coding-agent
                   agents.codex
@@ -120,10 +127,7 @@
 
                   # Agentic Tools
                   agents.agent-browser
-
-                  # dotfiles manager
-                  stow
-                ]
+                ])
                 ++ (extraPackages pkgs);
 
               # Initial Home Manager state version.
@@ -137,6 +141,8 @@
 
               programs.git = {
                 enable = true;
+                userName = gitUser.name;
+                userEmail = gitUser.email;
 
                 settings = {
                   credential."https://github.com".helper = "!gh auth git-credential";
@@ -223,7 +229,8 @@
 
               programs.home-manager.enable = true;
             }
-          ];
+          ]
+          ++ extraModules;
         };
     in
     {
@@ -287,6 +294,7 @@
             pkgs: with pkgs; [
               # k8s tools
               kubernetes-helm
+              beamPackages.elixir
             ];
         };
 
