@@ -60,10 +60,11 @@
                 [
                   # OS Tools
                   xclip
-                  xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
+                  xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in.
                   htop
                   tmux
-                  yazi # File Manager/Explorer TUI
+                  yazi # File Manager/Explorer TUI.
+                  _7zz # Used by yazi's built-in extract.
 
                   # CLI tools
                   nono
