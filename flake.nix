@@ -63,6 +63,7 @@
                   xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in
                   htop
                   tmux
+                  yazi # File Manager/Explorer TUI
 
                   # CLI tools
                   nono
@@ -102,11 +103,11 @@
                   nerd-fonts._0xproto
                   nerd-fonts._3270
 
-               # Package managers
-                pnpm
+                  # Package managers
+                  pnpm
 
-                # Neural
-                # ollama-rocm
+                  # Neural
+                  # ollama-rocm
 
                   # Coding Agents
                   # pi-coding-agent
