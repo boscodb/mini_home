@@ -150,6 +150,7 @@ return {
           ":coders.0",
           ":coders.1",
           ":coders.2",
+          ":coders.3",
         })
       end,
       desc = "Wiremux headless adopt coder panes",
@@ -161,6 +162,7 @@ return {
           ":coders.0",
           ":coders.1",
           ":coders.2",
+          ":coders.3",
         })
       end,
       desc = "Wiremux headless unadopt coder panes",
