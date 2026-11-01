@@ -13,6 +13,10 @@
     # The numtide cache only hits when the nixpkgs rev matches theirs;
     # following ours would rebuild every agent from source.
     llm-agents.url = "github:numtide/llm-agents.nix";
+
+    # Use Autolith's official flake because llm-agents.nix currently lags
+    # behind upstream releases.
+    autolith.url = "github:lambda-symbolics/autolith";
   };
 
   outputs =
@@ -20,6 +24,7 @@
       nixpkgs,
       home-manager,
       llm-agents,
+      autolith,
       ...
     }:
     let
@@ -49,6 +54,7 @@
           };
 
           agents = llm-agents.packages.${system};
+          autolithPackage = autolith.packages.${system}.default;
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -118,11 +124,10 @@
                 ]
                 ++ (pkgs.lib.optionals enableAgents [
                   # Coding Agents
-                  # pi-coding-agent
                   agents.codex
                   agents.claude-code
                   agents.antigravity-cli
-                  agents.autolith
+                  autolithPackage
                   agents.pi
 
                   # Agentic Tools
@@ -141,10 +146,12 @@
 
               programs.git = {
                 enable = true;
-                userName = gitUser.name;
-                userEmail = gitUser.email;
 
                 settings = {
+                  user = {
+                    name = gitUser.name;
+                    email = gitUser.email;
+                  };
                   credential."https://github.com".helper = "!gh auth git-credential";
                   credential."https://gitlab.com".helper = "!glab auth git-credential";
                 };
