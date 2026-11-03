@@ -23,6 +23,11 @@
       "baseUrl": "http://100.86.90.70:11434/v1",
       "api": "openai-completions",
       "apiKey": "ollama",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "supportsFinishReason": false,
+        "maxTokensField": "max_tokens"
+      },
       "models": [
         {
           "id": "qwen3.8:27b",
@@ -34,23 +39,9 @@
           "outputLimit": 8192,
           "contextWindow": 262144,
           "reasoning": true,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "id": "gemma4:31b",
-          "name": "Gemma3 31B A4B",
-          "input": [
-            "text",
-            "image"
-          ],
-          "outputLimit": 8192,
-          "contextWindow": 262144,
-          "reasoning": true,
+          "thinkingLevelMap": {
+            "off": "none"
+          },
           "cost": {
             "input": 0,
             "output": 0,
@@ -76,80 +67,14 @@
           }
         },
         {
-          "id": "gemma4:e4b",
-          "name": "Gemma 4 E4B (Ollama)",
+          "id": "gpt-oss:20b",
+          "name": "GPT-OSS 20B (Ollama)",
           "input": [
-            "text",
-            "image"
+            "text"
           ],
           "outputLimit": 8192,
           "contextWindow": 131072,
           "reasoning": true,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "id": "mistral-small:24b",
-          "name": "Mistral Small 3.2 24B (Ollama)",
-          "input": [
-            "text"
-          ],
-          "outputLimit": 8192,
-          "contextWindow": 131072,
-          "reasoning": false,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "id": "gemma3:27b",
-          "name": "Gemma 3 27B (Ollama)",
-          "input": [
-            "text",
-            "image"
-          ],
-          "outputLimit": 8192,
-          "contextWindow": 131072,
-          "reasoning": false,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "id": "qwen2.5-coder:14b",
-          "name": "Qwen 2.5 Coder 14B (Ollama)",
-          "input": [
-            "text"
-          ],
-          "outputLimit": 8192,
-          "contextWindow": 131072,
-          "reasoning": false,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "id": "qwen3-coder:30b",
-          "name": "Qwen 3 Coder 30B (Ollama)",
-          "input": [
-            "text"
-          ],
-          "outputLimit": 8192,
-          "contextWindow": 262144,
-          "reasoning": false,
           "cost": {
             "input": 0,
             "output": 0,
@@ -174,10 +99,104 @@
           }
         },
         {
-          "id": "gpt-oss:20b",
-          "name": "GPT-OSS 20B (Ollama)",
+          "id": "qwen3-coder:30b",
+          "name": "Qwen3 Coder 30B (Ollama)",
           "input": [
             "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 262144,
+          "reasoning": false,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "gemma4:31b",
+          "name": "Gemma 4 31B (Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 262144,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "gemma4:e4b",
+          "name": "Gemma 4 E4B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": true
+        },
+        {
+          "id": "nemotron-3.5-super:120b",
+          "name": "Nemotron 3.5 Super 120B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": true
+        },
+        {
+          "id": "nemotron-3.5-bolt:e4b",
+          "name": "Nemotron 3.5 Bolt E4B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": false
+        },
+        {
+          "id": "qwen2.5-coder:14b",
+          "name": "Qwen 2.5 Coder 14B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": false
+        },
+        {
+          "id": "deepseek-coder-v2:latest",
+          "name": "DeepSeek Coder V2 (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": false
+        },
+        {
+          "id": "mistral-small:24b",
+          "name": "Mistral Small 24B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 131072,
+          "reasoning": false
+        },
+        {
+          "id": "muse-glimmer:30b",
+          "name": "Muse Glimmer 30B (Ollama)",
+          "input": [
+            "text",
+            "image"
           ],
           "outputLimit": 8192,
           "contextWindow": 131072,
@@ -188,17 +207,173 @@
             "cacheRead": 0,
             "cacheWrite": 0
           }
+        },
+        {
+          "id": "flint:latest",
+          "name": "Flint 40B (Ollama)",
+          "input": [
+            "text"
+          ],
+          "outputLimit": 8192,
+          "contextWindow": 262144,
+          "reasoning": true,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
         }
       ]
     },
-    "kai": {
+    "kirloskar-vllm": {
       "baseUrl": "https://enterprisebraintest.kirloskar.com/qwen3.8/v1",
       "api": "openai-completions",
       "apiKey": "ollama",
+      "compat": {
+        "supportsDeveloperRole": false
+      },
       "models": [
         {
           "id": "Qwen/Qwen3.8-27B",
-          "contextWindow": 100000
+          "name": "Qwen 3.8 27B (Kirloskar vLLM)",
+          "contextWindow": 100000,
+          "reasoning": true
+        }
+      ]
+    },
+    "kirloskar-ollama": {
+      "baseUrl": "https://enterprisebraintest.kirloskar.com/ollama/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "compat": {
+        "supportsDeveloperRole": false
+      },
+      "models": [
+        {
+          "id": "gpt-oss:120b",
+          "name": "GPT-OSS 120B (Kirloskar Ollama)",
+          "contextWindow": 131072,
+          "reasoning": true
+        },
+        {
+          "id": "gemma4:31b",
+          "name": "Gemma 4 31B (Kirloskar Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 262144,
+          "reasoning": true
+        },
+        {
+          "id": "gpt-oss:20b",
+          "name": "GPT-OSS 20B (Kirloskar Ollama)",
+          "contextWindow": 131072,
+          "reasoning": true
+        },
+        {
+          "id": "qwen3.6:35b",
+          "name": "Qwen 3.6 35B (Kirloskar Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 262144,
+          "reasoning": true
+        },
+        {
+          "id": "granite4.1:30b",
+          "name": "Granite 4.1 30B (Kirloskar Ollama)",
+          "contextWindow": 131072,
+          "reasoning": false
+        },
+        {
+          "id": "muse-glimmer:30b",
+          "name": "Muse Glimmer 30B (Kirloskar Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 131072,
+          "reasoning": true
+        },
+        {
+          "id": "gemma4:e2b",
+          "name": "Gemma 4 E2B (Kirloskar Ollama)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 131072,
+          "reasoning": true
+        },
+        {
+          "id": "qwen2.5:0.5b",
+          "name": "Qwen 2.5 0.5B (Kirloskar Ollama)",
+          "contextWindow": 32768,
+          "reasoning": false
+        }
+      ]
+    },
+    "openrouter": {
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "api": "openai-completions",
+      "apiKey": "${OPENROUTER_API_KEY}",
+      "models": [
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Opus 5.5 (OpenRouter)",
+          "contextWindow": 1000000,
+          "reasoning": true
+        },
+        {
+          "id": "openai/gpt-6-sol",
+          "name": "GPT 6 Sol (OpenRouter)",
+          "contextWindow": 1050000,
+          "reasoning": true
+        },
+        {
+          "id": "google/gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash (OpenRouter)",
+          "contextWindow": 1048576,
+          "reasoning": false
+        },
+        {
+          "id": "qwen/qwen3.8-27b",
+          "name": "Qwen 3.8 27B (OpenRouter)",
+          "contextWindow": 1000000,
+          "reasoning": true
+        },
+        {
+          "id": "nvidia/nemotron-3.5-super-vl",
+          "name": "Nvidia Nemotron 3.5 Super VL (OpenRouter)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 131072,
+          "reasoning": true
+        },
+        {
+          "id": "meta/muse-glimmer-30b",
+          "name": "Meta Muse Glimmer 30B (OpenRouter)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 131072,
+          "reasoning": true
+        },
+        {
+          "id": "google/gemma-4-31b-it",
+          "name": "Google Gemma 4 31B IT (OpenRouter)",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 262144,
+          "reasoning": true
         }
       ]
     }
