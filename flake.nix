@@ -54,7 +54,6 @@
           };
 
           agents = llm-agents.packages.${system};
-          autolithPackage = autolith.packages.${system}.default;
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -127,7 +126,6 @@
                   agents.codex
                   agents.claude-code
                   agents.antigravity-cli
-                  autolithPackage
                   agents.pi
 
                   # Agentic Tools
@@ -271,6 +269,10 @@
           system = "x86_64-linux";
           username = "lolya";
           homeDirectory = "/home/lolya";
+
+          extraPackages = pkgs: [
+            autolith.packages.${pkgs.stdenv.hostPlatform.system}.default
+          ];
         };
 
         "dblinux" = mkHome {
