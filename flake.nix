@@ -289,6 +289,12 @@
             name = "anandcpanchal";
             email = "anand13394@gmail.com";
           };
+          extraPackages =
+            pkgs: with pkgs; [
+              # k8s tools
+              kubernetes-helm
+              beamPackages.elixir
+            ];
         };
 
         "acpw" = mkHome {
