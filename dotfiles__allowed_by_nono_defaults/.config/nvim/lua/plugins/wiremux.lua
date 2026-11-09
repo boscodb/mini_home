@@ -147,10 +147,18 @@ return {
       "<leader>thc",
       function()
         adopt_headless({
-          ":coders.0",
-          ":coders.1",
-          ":coders.2",
-          ":coders.5",
+          -- ":coders.0",
+          -- ":coders.1",
+          -- ":coders.2",
+          -- ":coders.3",
+          -- ":coders.5",
+
+          ":pi.2",
+          ":codex.2",
+          ":claude.2",
+          ":autolith.2",
+          -- ":deepclause.2",
+          ":nodecode.2"
         })
       end,
       desc = "Wiremux headless adopt coder panes",
@@ -159,10 +167,18 @@ return {
       "<leader>thC",
       function()
         unadopt_headless({
-          ":coders.0",
-          ":coders.1",
-          ":coders.2",
-          ":coders.5",
+          -- ":coders.0",
+          -- ":coders.1",
+          -- ":coders.2",
+          -- ":coders.3",
+          -- ":coders.5",
+
+          ":pi.2",
+          ":codex.2",
+          ":claude.2",
+          ":autolith.2",
+          -- ":deepclause.2",
+          ":nodecode.2"
         })
       end,
       desc = "Wiremux headless unadopt coder panes",
