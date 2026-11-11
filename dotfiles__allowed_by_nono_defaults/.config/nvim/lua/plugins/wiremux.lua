@@ -157,7 +157,7 @@ return {
           ":codex.2",
           ":claude.2",
           ":autolith.2",
-          -- ":deepclause.2",
+          ":deepclause.2",
           ":nodecode.2"
         })
       end,
@@ -177,7 +177,7 @@ return {
           ":codex.2",
           ":claude.2",
           ":autolith.2",
-          -- ":deepclause.2",
+          ":deepclause.2",
           ":nodecode.2"
         })
       end,
