@@ -102,6 +102,7 @@
                   nodejs_26
                   gcc
                   tree-sitter # nvim-treesitter grammar builds; must shadow the Windows npm shim on WSL PATH
+                  powershell
 
                   # Git Tools
                   difftastic
@@ -299,6 +300,19 @@
             name = "anandcpanchal";
             email = "anand13394@gmail.com";
           };
+          extraModules = [
+            (
+              { lib, pkgs, ... }:
+              {
+                home.activation = {
+                  helloWorld = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+                    $DRY_RUN_CMD ${pkgs.powershell}/bin/pwsh -NoProfile -File ${./scripts/hello_world.ps1}
+                  '';
+                };
+              }
+            )
+          ];
+
           extraPackages =
             pkgs: with pkgs; [
               # k8s tools
