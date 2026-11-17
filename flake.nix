@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Deliberately NOT `inputs.nixpkgs.follows = "nixpkgs"`.
     # The numtide cache only hits when the nixpkgs rev matches theirs;
     # following ours would rebuild every agent from source.
@@ -30,6 +35,7 @@
     {
       nixpkgs,
       home-manager,
+      fenix,
       llm-agents,
       autolith,
       teejay,
@@ -62,6 +68,14 @@
           };
 
           agents = llm-agents.packages.${system};
+          rustToolchain = fenix.packages.${system}.stable.withComponents [
+            "cargo"
+            "clippy"
+            "rust-analyzer"
+            "rust-src"
+            "rustc"
+            "rustfmt"
+          ];
           teejayPackage = teejay.packages.${system}.default;
         in
         home-manager.lib.homeManagerConfiguration {
@@ -101,6 +115,7 @@
                   # Compilers, Runtimes
                   nodejs_26
                   gcc
+                  rustToolchain
                   tree-sitter # nvim-treesitter grammar builds; must shadow the Windows npm shim on WSL PATH
 
                   # Git Tools
