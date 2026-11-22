@@ -22,13 +22,6 @@
     # Use Autolith's official flake because llm-agents.nix currently lags
     # behind upstream releases.
     autolith.url = "github:lambda-symbolics/autolith";
-
-    teejay = {
-      # tmux activity monitor with a pane watchlist
-      # https://github.com/mipmip/teejay
-      url = "github:mipmip/teejay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -38,7 +31,6 @@
       fenix,
       llm-agents,
       autolith,
-      teejay,
       ...
     }:
     let
@@ -76,7 +68,6 @@
             "rustc"
             "rustfmt"
           ];
-          teejayPackage = teejay.packages.${system}.default;
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -94,7 +85,6 @@
                   xdg-utils # provides xdg-open; GCM requires it on PATH to offer browser sign-in.
                   htop
                   tmux
-                  teejayPackage # tmux activity monitor; https://github.com/mipmip/teejay
                   yazi # File Manager/Explorer TUI.
                   _7zz # Used by yazi's built-in extract.
 
