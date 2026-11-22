@@ -1,5 +1,10 @@
 {
   "entries": {
+    "nolabs-ai/codex": {
+      "last_check": "2026-11-22T06:54:12.906705021Z",
+      "installed_at_check": "0.2.3",
+      "latest": "0.2.4"
+    },
     "nolabs-ai/pi": {
       "last_check": "2026-11-22T06:51:26.915320544Z",
       "installed_at_check": "0.2.2",
