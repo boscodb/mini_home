@@ -14,8 +14,6 @@
   "tuiMode": "regular",
   "hideThinkingBlock": false,
   "defaultThinkingLevel": "high",
-  "packages": [
-    "npm:@cortexkit/pi-antigravity-auth"
-  ],
+  "packages": [],
   "lastChangelogVersion": "1.5.2"
 }
