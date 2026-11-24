@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+set -u
+
+# Pin all repository reads to an explicit operation so jj does not snapshot or
+# update any working copy.
+if ! workspace_rows=$(
+  jj --at-op=@ workspace list \
+    -T 'name ++ "\t" ++ root ++ "\t" ++ target.commit_id() ++ "\n"'
+); then
+  printf 'Could not list workspaces for the current repository\n' >&2
+  exit 1
+fi
+
+printf '%-10s %-12s %s\n' 'WORKSPACE' 'STATUS' 'PATH'
+
+result=0
+
+while IFS=$'\t' read -r name root current_target; do
+  if [[ -z "$name" ]]; then
+    continue
+  fi
+
+  if [[ -z "$root" || ! -d "$root" ]]; then
+    status='Unavailable'
+    result=1
+  elif ! working_copy=$(jj -R "$root" --at-op=@ debug working-copy 2>/dev/null); then
+    status='Unknown'
+    result=1
+  else
+    operation=$(
+      awk -F'"' '/^Current operation:/ { print $2; exit }' <<<"$working_copy"
+    )
+
+    if [[ -z "$operation" ]]; then
+      status='Unknown'
+      result=1
+    elif ! recorded_target=$(
+      jj -R "$root" --at-op="$operation" log --no-graph -r @ \
+        -T 'commit_id ++ "\n"' 2>/dev/null
+    ); then
+      status='Unknown'
+      result=1
+    elif [[ "$recorded_target" == "$current_target" ]]; then
+      status='Current'
+    else
+      status='Stale'
+    fi
+  fi
+
+  printf '%-10s %-12s %s\n' "$name" "$status" "$root"
+done <<<"$workspace_rows"
+
+exit "$result"
