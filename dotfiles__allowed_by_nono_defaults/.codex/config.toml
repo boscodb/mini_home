@@ -1,5 +1,5 @@
-model = "gpt-6.1-sol"
-model_reasoning_effort = "high"
+model = "gpt-6.2-sol"
+model_reasoning_effort = "medium"
 service_tier = "default"
 [projects."/home/lolya/data/zr/workspaces/mini_home__spaces/mini_home__codex"]
 trust_level = "trusted"
@@ -34,5 +34,5 @@ submit = "enter"
 queue = "alt-enter"
 
 [tui.model_availability_nux]
-"gpt-6.1-sol" = 1
+"gpt-6.1-sol" = 2
 
