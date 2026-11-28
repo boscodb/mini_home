@@ -54,7 +54,7 @@ Sr.No.,Behavior Id,Given,Distilled Given,CRUD,When,Distilled When,Then
 1. **Quote any field** containing commas, double quotes (escaped as `""`), or newlines (including multi-ID `Distilled Given` and multi-line `Then`).
 2. **Repeat `Given`** on every row where it applies (do not leave merged cells blank in CSV).
 3. **Multi-line `Then` values** (when one action produces multiple observable effects) must be enclosed in double quotes with each effect on its own line.
-4. **No prose paragraphs** in `Distilled When` or `Then`—use terse `TAG: description` lines only.
+4. **No prose paragraphs or verbs in `Then`:** In `Distilled When` and `Then`, use terse `TAG: description` lines only; **avoid all verbs in `Then`** (express outcomes strictly as nouns, UI targets, values, or state adjectives such as `Enabled`, `Disabled`, `Visible`, `Hidden`, `Active`, `Empty`, `Unchanged`).
 
 ---
 
@@ -69,7 +69,7 @@ Sr.No.,Behavior Id,Given,Distilled Given,CRUD,When,Distilled When,Then
 | `CRUD` | Data/system operation of `When` | Single letter: `C`, `R`, `U`, or `D` (see CRUD Rules below). |
 | `When` | Process: UI interaction, endpoint call, or system trigger (*Act*) | Concise active sentence describing what happens (e.g., `User clicks Get Started button`). |
 | `Distilled When` | Standardized action tag (**always populated**) | `UPPERCASE_TAG: concise description` (e.g., `BUTTON: Click Get Started`). Never leave blank. |
-| `Then` | Observable UI / item / data outcome (*Assert*) | One or more `UPPERCASE_TAG: observable effect` lines reflecting what the user or caller can observe. |
+| `Then` | Observable UI / item / data outcome (*Assert*) | One or more `UPPERCASE_TAG: <noun / target / state / value>` lines **without verbs** (no action or passive verbs like `displayed`, `shown`, `created`, `updated`, `remains`). |
 
 ---
 
@@ -97,14 +97,16 @@ Always prefer these standardized `UPPER_SNAKE_CASE` prefixes. Introduce a new `U
 | **API / Endpoint** | `ENDPOINT:` | `ENDPOINT: POST /api/v1/users` |
 | **System / Background** | `SYSTEM:`, `CHECK:`, `EVENT:`, `TIMER:` | `CHECK: System requirements`, `SYSTEM: Verify dependencies` |
 
-### `Then` Tags (Observable Effects)
+### `Then` Tags (Observable Effects — Strictly Verb-Free)
+
+Never use verbs inside `Then` descriptions (e.g., avoid `displayed`, `shown`, `created`, `updated`, `opened`, `remains`). State only the UI/data target and its resulting state/value:
 
 | Category | Standard Tags | Example |
 | :--- | :--- | :--- |
 | **Screen / Window** | `OPEN:`, `CLOSE:`, `SCREEN:`, `MODAL:`, `REDIRECT:` | `OPEN: Installer --> Get Ready page`, `SCREEN: Loader` |
-| **UI Controls & Labels** | `BUTTON:`, `FIELD:`, `LABEL:`, `TEXT:`, `LIST:`, `TABLE:` | `BUTTON: Get Start Disabled`, `LABEL: Status updated` |
+| **UI Controls & Labels** | `BUTTON:`, `FIELD:`, `LABEL:`, `TEXT:`, `LIST:`, `TABLE:` | `BUTTON: Get Start Disabled`, `LABEL: Status Active` |
 | **Notifications / Errors** | `TOAST:`, `BANNER:`, `ERROR_MSG:` | `ERROR_MSG: Invalid credentials` |
-| **Data / Files / State** | `STATE:`, `DATA:`, `FILE:`, `API_RESPONSE:`, `NO_ACTION:` | `FILE: config.json created`, `NO_ACTION: Form remains unchanged` |
+| **Data / Files / State** | `STATE:`, `DATA:`, `FILE:`, `API_RESPONSE:`, `NO_ACTION:` | `FILE: config.json present`, `NO_ACTION: Form unchanged` |
 
 ---
 
@@ -140,5 +142,5 @@ Before writing to Google Sheets or returning CSV, verify:
 5. `Distilled Given` references valid prerequisite `Behavior Id`(s) or `NONE`.
 6. Every row has a non-empty `Distilled When` starting with an `UPPERCASE_TAG:`.
 7. `CRUD` is one of `C`, `R`, `U`, `D`, with all new writes/file additions marked `C`.
-8. `Then` expresses only observable UI/item/data effects using `UPPERCASE_TAG:` prefixes (no narrative prose).
+8. `Then` expresses only observable UI/item/data effects using `UPPERCASE_TAG:` prefixes **with zero verbs** (only nouns, targets, values, and state adjectives).
 9. For Google Sheets: native cell strings/formulas are written (no CSV double-quoting, raw `\n` for multi-line `Then`), continuing `Sr.No.` and `Behavior Id` from the last row. For CSV fallback: multi-line `Then` cells and values with commas are double-quoted.

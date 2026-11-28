@@ -14,6 +14,6 @@ BUTTON: Get Start Disabled"
 3,EB-OFFLINE-03,UI - Get Ready Page,EB-OFFLINE-02,R,All system requirement checks pass.,SYSTEM: All checks pass,BUTTON: Get Start Enabled
 4,EB-OFFLINE-04,UI - Get Ready Page,EB-OFFLINE-02,R,Requirements check fails due to system limitations.,SYSTEM: Requirements check failed,SCREEN: Requirement Check Page
 5,EB-OFFLINE-05,UI - Get Ready Page,EB-OFFLINE-03,C,User clicks Get Started button.,BUTTON: Click Get Started,"SCREEN: Installation Page
-STATE: Setup starts"
+STATE: Setup in progress"
 6,EB-OFFLINE-06,UI - Get Ready Page,EB-OFFLINE-05,R,"Ollama, required model, Docker, and EB container are already installed on the system.",CHECK: Pre-installed dependencies,SCREEN: Finish Page
 ```
